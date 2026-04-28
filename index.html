@@ -15,6 +15,7 @@
   --text:#DDE8FF;--muted:#7B9DC8;--muted2:#4E6E96;
 }
 html{scroll-behavior:smooth;background:#080E1D}
+/* canvas paints its own dark bg — html fallback only for no-JS */
 body{font-family:'Inter',sans-serif;background:transparent;color:var(--text);overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:#f1f5f9}
@@ -480,7 +481,7 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
         <div class="sg-title"><i class="fas fa-robot"></i> Software &amp; AI</div>
         <div class="sk"><div class="sk-row"><span>Python (FastAPI, AI)</span><span class="sk-pct">88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
         <div class="sk"><div class="sk-row"><span>Android (Kotlin)</span><span class="sk-pct">75%</span></div><div class="sk-bar"><div class="sk-fill" data-w="75"></div></div></div>
-        <div class="sk"><div class="sk-row"><span>Google Gemini AI</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div></div>
+        <div class="sk"><div class="sk-row"><span>AI Vision APIs</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div></div>
         <div class="sk"><div class="sk-row"><span>Web (HTML / CSS / JS)</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" data-w="78"></div></div></div>
         <div class="sk"><div class="sk-row"><span>C / C++</span><span class="sk-pct">70%</span></div><div class="sk-bar"><div class="sk-fill" data-w="70"></div></div></div>
       </div>
@@ -516,16 +517,25 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
 <!-- Projects -->
 <section id="projects">
   <div class="wrap">
-    <div class="fu"><div class="s-tag">Projects</div><h2 class="s-title">What I've Built</h2><p class="s-sub">At Schneider Electric I built an end-to-end AI inspection platform — from Android app to cloud backend — that field engineers use on real LV switchboards.</p></div>
+    <div class="fu"><div class="s-tag">Projects</div><h2 class="s-title">What I've Built</h2><p class="s-sub">Every component below — Android app, cloud backend, web dashboard, AI pipeline — was designed and built by me during my internship at Schneider Electric, Eybens.</p></div>
     <div class="feat fu">
       <div>
-        <div class="feat-tag">⚡ Featured · Built at Schneider Electric, Eybens · Feb – Aug 2025</div>
+        <div class="feat-tag">⚡ Featured · Schneider Electric Internship · Eybens, France · Feb – Aug 2025</div>
         <h3 class="feat-title">Panel Inspector Pro</h3>
-        <p class="feat-desc">I designed and built this entire platform during my internship at Schneider Electric. A field engineer photographs an LV switchboard — the Android app (Kotlin) sends the image to my Python FastAPI backend, which runs a computer vision pipeline to automatically identify the panel type (PrismaSeT G, PrismaSeT P or Okken), detect every circuit breaker with bounding-box coordinates, read their ratings and labels, and generate a task-specific safety checklist aligned with IEC 60900 and Schneider's arc-flash guidelines. Engineers can also upload a Single Line Diagram (PDF or image) for cross-referencing. Scan history, GPS verification and offline storage are handled via SQLite. The same backend powers a public web platform — deployed on Render and live 24/7, no installation needed.</p>
+        <p class="feat-desc">
+          A field engineer points their phone at an LV switchboard and takes a photo — that single action triggers a full inspection:
+        </p>
+        <ul style="list-style:none;margin:14px 0 18px;display:flex;flex-direction:column;gap:9px">
+          <li style="font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65"><span style="position:absolute;left:0;color:var(--blue)">→</span> The <strong style="color:var(--text)">Android app (Kotlin)</strong> captures the image with GPS coordinates, stores the scan in local SQLite, and sends it to the backend.</li>
+          <li style="font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65"><span style="position:absolute;left:0;color:var(--blue)">→</span> My <strong style="color:var(--text)">Python FastAPI backend</strong> runs a computer vision pipeline: identifies the panel model (PrismaSeT G / P or Okken), draws bounding boxes around every circuit breaker, and reads each breaker's rating and label.</li>
+          <li style="font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65"><span style="position:absolute;left:0;color:var(--blue)">→</span> A <strong style="color:var(--text)">safety checklist</strong> is auto-generated — IEC 60900, arc-flash PPE, and Schneider-specific procedures — based on the panel type and breakers detected.</li>
+          <li style="font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65"><span style="position:absolute;left:0;color:var(--blue)">→</span> Engineers can upload a <strong style="color:var(--text)">Single Line Diagram (PDF or image)</strong> for cross-referencing against the detected breakers.</li>
+          <li style="font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65"><span style="position:absolute;left:0;color:var(--blue)">→</span> The same backend powers a <strong style="color:var(--text)">public web platform</strong> — no app install needed, deployed on Render and live 24/7.</li>
+        </ul>
         <div class="techs">
           <span class="tech b">Computer Vision AI</span><span class="tech b">Python FastAPI</span>
-          <span class="tech b">Android Kotlin</span><span class="tech">Cloud Vision API</span>
-          <span class="tech">SQLite</span><span class="tech">Render Cloud</span><span class="tech">REST API</span>
+          <span class="tech b">Android Kotlin</span><span class="tech">SQLite</span>
+          <span class="tech">REST API</span><span class="tech">Render Cloud</span><span class="tech">GPS + OCR</span>
         </div>
         <div class="feat-btns">
           <a href="https://panel-inspector-server.onrender.com/dashboard.html" target="_blank" class="fb b"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
@@ -533,11 +543,11 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
         </div>
       </div>
       <div class="feat-visual">
-        <div class="fv"><div class="fv-icon"><i class="fas fa-mobile-alt"></i></div><div><div class="fv-name">Android App</div><div class="fv-sub">Kotlin · Camera · GPS · SQLite</div></div></div>
-        <div class="fv"><div class="fv-icon"><i class="fas fa-globe"></i></div><div><div class="fv-name">Web Platform</div><div class="fv-sub">Public — runs on Render 24/7</div></div></div>
-        <div class="fv"><div class="fv-icon"><i class="fas fa-robot"></i></div><div><div class="fv-name">AI Vision Pipeline</div><div class="fv-sub">Breaker detection + classification</div></div></div>
-        <div class="fv"><div class="fv-icon"><i class="fas fa-diagram-project"></i></div><div><div class="fv-name">SLD Cross-reference</div><div class="fv-sub">PDF &amp; image support</div></div></div>
-        <div class="fv"><div class="fv-icon"><i class="fas fa-shield-halved"></i></div><div><div class="fv-name">Safety Checklists</div><div class="fv-sub">IEC 60900 · Arc flash · PPE</div></div></div>
+        <div class="fv"><div class="fv-icon"><i class="fas fa-mobile-alt"></i></div><div><div class="fv-name">Android App — Built in Kotlin</div><div class="fv-sub">Camera · GPS tagging · SQLite · REST client</div></div></div>
+        <div class="fv"><div class="fv-icon"><i class="fas fa-server"></i></div><div><div class="fv-name">FastAPI Backend — 3 Endpoints</div><div class="fv-sub">/identify · /analyze · /read_label</div></div></div>
+        <div class="fv"><div class="fv-icon"><i class="fas fa-crosshairs"></i></div><div><div class="fv-name">AI Vision Pipeline</div><div class="fv-sub">Panel ID · Bounding boxes · Label OCR</div></div></div>
+        <div class="fv"><div class="fv-icon"><i class="fas fa-globe"></i></div><div><div class="fv-name">Web Dashboard</div><div class="fv-sub">Zero install · Render cloud · 24/7 uptime</div></div></div>
+        <div class="fv"><div class="fv-icon"><i class="fas fa-shield-halved"></i></div><div><div class="fv-name">Safety Engine</div><div class="fv-sub">IEC 60900 · SLD cross-ref · Arc-flash PPE</div></div></div>
       </div>
     </div>
     <div class="small-grid">
@@ -758,7 +768,8 @@ document.addEventListener('mousemove',e=>{
   }
 
   function tick(){
-    c.clearRect(0,0,W,H);
+    c.fillStyle='#080E1D';
+    c.fillRect(0,0,W,H);
     nodes.forEach(n=>{
       n.x+=n.vx; n.y+=n.vy; n.p+=.016;
       if(n.x<0||n.x>W) n.vx*=-1;
