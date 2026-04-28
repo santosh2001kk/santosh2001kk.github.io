@@ -294,6 +294,19 @@ section{padding:96px 48px;position:relative;z-index:1}
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
 }
 
+/* ── Conference / Event card ── */
+.conf-card{position:relative;margin-bottom:44px}
+.conf-card::before{content:'';position:absolute;left:-35px;top:6px;
+  width:14px;height:14px;border-radius:50%;
+  background:#10B981;box-shadow:0 0 0 5px rgba(16,185,129,.15),0 0 14px rgba(16,185,129,.25);
+}
+.conf-inner{background:linear-gradient(135deg,rgba(16,185,129,.07),rgba(6,182,212,.05));
+  border:1.5px solid rgba(16,185,129,.22);border-radius:16px;padding:24px;transition:all .25s;
+}
+.conf-card:hover .conf-inner{border-color:rgba(16,185,129,.38);transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(16,185,129,.1);
+}
+
 /* ── Regular experience items ── */
 .tl-item{position:relative;margin-bottom:40px}
 .tl-item::before{content:'';position:absolute;left:-35px;top:6px;
@@ -593,8 +606,35 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
             <div class="se-date">Feb 2025 – Aug 2025</div>
           </div>
           <div class="se-badge-current"><div class="se-badge-dot"></div> Current Position</div>
-          <p class="se-desc">Developing an AI-powered inspection platform for Schneider Electric LV switchboards — combining computer vision, Google Gemini, and Android development to automate panel identification and safety assessment on-site.</p>
+          <p class="se-desc">Developing an AI-powered inspection platform for Schneider Electric LV switchboards — combining computer vision, Android development, and cloud APIs to automate panel identification and safety assessment on-site.</p>
           <div class="se-expand-hint"><i class="fas fa-chevron-down"></i> Click to see full details</div>
+        </div>
+      </div>
+
+      <!-- Smart City Expo 2025 -->
+      <div class="conf-card">
+        <div class="conf-inner">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#10B981,#059669);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🌍</div>
+              <div>
+                <div style="font-size:16px;font-weight:700;color:var(--text)">Conference Delegate</div>
+                <div style="font-size:13px;color:#34D399;font-weight:600;margin-top:2px">Smart City Expo World Congress 2025 · Barcelona, Spain</div>
+              </div>
+            </div>
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#34D399;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.22);padding:4px 12px;border-radius:20px;white-space:nowrap;align-self:flex-start">2025</div>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.22);border-radius:20px;font-size:11px;font-weight:700;color:#34D399;margin-bottom:14px">
+            <i class="fas fa-flag" style="font-size:10px"></i> Representing Grenoble INP – Ense3 · Choose France Delegation
+          </div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.75">Selected by <strong style="color:var(--text)">Grenoble INP – Ense3</strong> to represent Grenoble at the Smart City Expo World Congress 2025 in Barcelona — one of the world's leading global forums on innovation, sustainability, and the future of cities. Engaged with researchers, engineers, and industry leaders from 800+ cities on <strong style="color:var(--text)">smart grids, energy transition, and sustainable urban planning</strong>, under the global theme <em>"The Time for Cities."</em> Proud to carry Grenoble's name on an international stage as part of the <strong style="color:var(--text)">Choose France</strong> delegation — representing the city's vision for a smarter, greener future.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+            <span style="padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399">Smart Cities</span>
+            <span style="padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399">Smart Grids</span>
+            <span style="padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399">Energy Transition</span>
+            <span style="padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399">Sustainability</span>
+            <span style="padding:3px 10px;border-radius:5px;font-size:11px;font-weight:600;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399">Grenoble INP – Ense3</span>
+          </div>
         </div>
       </div>
 
