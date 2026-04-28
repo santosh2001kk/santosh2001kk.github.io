@@ -22,16 +22,16 @@ body{font-family:'Inter',sans-serif;background:transparent;color:var(--text);ove
 ::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:4px}
 
 /* ── Availability banner ── */
-.avail{padding:10px 32px;text-align:center;font-size:13px;font-weight:500;
-  background:rgba(91,155,255,.1);border-bottom:1px solid rgba(91,155,255,.2);color:var(--text);
+.avail{padding:0 32px;text-align:center;font-size:12.5px;font-weight:500;
+  background:rgba(91,155,255,.08);border-bottom:1px solid rgba(91,155,255,.18);color:var(--text);
   display:flex;align-items:center;justify-content:center;gap:10px;
-  position:relative;z-index:1000;
+  position:fixed;top:0;left:0;right:0;z-index:1001;height:34px;
 }
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:blink 2s infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{opacity:.4;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
 
 /* ── Nav ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;height:64px;
+nav{position:fixed;top:34px;left:0;right:0;z-index:999;height:60px;
   display:flex;align-items:center;justify-content:space-between;padding:0 48px;
   background:rgba(8,14,29,.88);backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 1px 24px rgba(0,0,0,.4);transition:height .3s;
@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:64px;
 
 /* ── Hero ── */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
-  padding:100px 48px 80px;position:relative;overflow:hidden;text-align:center;
+  padding:130px 48px 80px;position:relative;overflow:hidden;text-align:center;
   background:transparent;
 }
 .hero-bg{position:absolute;inset:0;
@@ -373,7 +373,7 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
 <!-- Availability -->
 <div class="avail">
   <div class="avail-dot"></div>
-  <strong style="color:var(--blue);margin-right:5px">Actively looking for work</strong> — Electrical Engineering · AI · Smart Grids
+  <strong style="color:var(--blue);margin-right:5px">Actively looking for a job</strong> — Electrical Engineering · AI · Smart Grids
 </div>
 
 <!-- Nav -->
@@ -739,7 +739,7 @@ document.querySelectorAll('.sg').forEach(g=>barObs.observe(g));
 
 // Nav shrink
 window.addEventListener('scroll',()=>{
-  document.getElementById('nav').style.height=window.scrollY>50?'54px':'64px';
+  document.getElementById('nav').style.height=window.scrollY>50?'50px':'60px';
 });
 
 // Cursor glow
