@@ -359,7 +359,7 @@ footer{padding:24px 48px;border-top:1px solid var(--border);
   <div class="hero-inner">
     <div class="hero-pill"><i class="fas fa-bolt"></i> Electrical Engineering &amp; AI</div>
     <h1 class="hero-name">
-      Santosh<br><span>Kathirvelu Kumaraguru</span>
+      Santosh <span>Kathirvelu Kumaraguru</span>
     </h1>
     <p class="hero-role">
       <strong>Master's Student</strong> · Grenoble INP – Ense3 ·
@@ -376,10 +376,9 @@ footer{padding:24px 48px;border-top:1px solid var(--border);
       <a href="mailto:santosh2001kk@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
     </div>
     <div class="hero-stats">
-      <div><div class="hs-num" data-t="3">0</div><div class="hs-lbl">Years Exp.</div></div>
-      <div><div class="hs-num" data-t="4">0</div><div class="hs-lbl">Projects</div></div>
-      <div><div class="hs-num" data-t="92">0</div><div class="hs-lbl">% AI Accuracy</div></div>
-      <div><div class="hs-num" data-t="2">0</div><div class="hs-lbl">Internships</div></div>
+      <div class="chip b" style="font-size:13px;padding:8px 16px"><i class="fas fa-building"></i> Schneider Electric — Eybens, France</div>
+      <div class="chip a" style="font-size:13px;padding:8px 16px"><i class="fas fa-graduation-cap"></i> Grenoble INP – Ense3</div>
+      <div class="chip" style="font-size:13px;padding:8px 16px"><i class="fas fa-location-dot"></i> Grenoble, France</div>
     </div>
   </div>
 </section>
@@ -511,8 +510,8 @@ footer{padding:24px 48px;border-top:1px solid var(--border);
             <div class="se-logo-wrap">
               <div class="se-logo">SE</div>
               <div class="se-title-wrap">
-                <div class="se-role">Electrical Engineering Intern</div>
-                <div class="se-company">Schneider Electric · Grenoble, France</div>
+                <div class="se-role">AI & Electrical Engineering Intern</div>
+                <div class="se-company">Schneider Electric · Eybens, France</div>
               </div>
             </div>
             <div class="se-date">Feb 2025 – Aug 2025</div>
@@ -600,8 +599,8 @@ footer{padding:24px 48px;border-top:1px solid var(--border);
       <div style="display:flex;align-items:center;gap:14px">
         <div class="se-modal-logo">SE</div>
         <div>
-          <div class="se-modal-role">Electrical Engineering Intern</div>
-          <div class="se-modal-company">Schneider Electric · Grenoble, France · Feb 2025 – Aug 2025</div>
+          <div class="se-modal-role">AI & Electrical Engineering Intern</div>
+          <div class="se-modal-company">Schneider Electric · Eybens, France · Feb 2025 – Aug 2025</div>
         </div>
       </div>
       <div class="se-modal-close" onclick="closeSEBtn()"><i class="fas fa-times"></i></div>
@@ -661,17 +660,6 @@ const barObs = new IntersectionObserver(e=>e.forEach(x=>{
 }),{threshold:.3});
 document.querySelectorAll('.sg').forEach(g=>barObs.observe(g));
 
-// Hero counters
-setTimeout(()=>{
-  document.querySelectorAll('.hs-num').forEach(el=>{
-    const t=parseInt(el.dataset.t); let c=0;
-    const iv=setInterval(()=>{
-      c=Math.min(c+Math.max(1,Math.floor(t/35)),t);
-      el.textContent=c+(t>=90?'%':'+');
-      if(c>=t) clearInterval(iv);
-    },35);
-  });
-},500);
 
 // Nav shrink
 window.addEventListener('scroll',()=>{
