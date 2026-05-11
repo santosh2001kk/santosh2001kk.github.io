@@ -120,7 +120,9 @@ section{padding:96px 48px;position:relative;z-index:1}
 }
 .avatar-inner{width:100%;height:100%;border-radius:50%;background:#EEF2FF;
   display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--blue);
+  overflow:hidden;
 }
+.avatar-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .about-p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:14px}
 .about-p strong{color:var(--text)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
@@ -461,7 +463,7 @@ footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.08);background:r
   <div class="wrap">
     <div class="fu"><div class="s-tag">About Me</div><h2 class="s-title">Electrical Engineer<br>who builds with AI</h2></div>
     <div class="about-grid fu">
-      <div><div class="avatar-ring"><div class="avatar-inner"><i class="fas fa-user"></i></div></div></div>
+      <div><div class="avatar-ring"><div class="avatar-inner"><img src="profile.jpeg" alt="Santosh Kathirvelu Kumaraguru"></div></div></div>
       <div>
         <p class="about-p">I'm <strong>Santosh Kathirvelu Kumaraguru</strong>, a Master's student in <strong>Electrical Energy and Smart Grids</strong> at Grenoble INP – Ense3, France. My work sits at the intersection of electrical engineering, computer vision, and AI.</p>
         <p class="about-p">Currently interning at <strong>Schneider Electric</strong> in Grenoble, where I'm building an AI-powered inspection platform for LV switchboards — combining electrical domain knowledge with computer vision, Android development, and FastAPI backends deployed to the cloud.</p>
